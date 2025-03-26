@@ -1,0 +1,14 @@
+name: End-to-end tests
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install  # ou `yarn install` se estiver usando Yarn
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
